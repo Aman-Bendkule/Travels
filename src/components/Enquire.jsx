@@ -62,7 +62,8 @@
 //     }
 
 //     try {
-//       let response = await fetch('http://localhost:3000/submitData', {
+//       let response = await fetch('http://travels-dusky.vercel.app
+/submitData', {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify({ ...enquiryData, id: uuidv4() })

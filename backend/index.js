@@ -6,7 +6,11 @@ const cors = require('cors');
 const app = express()
 const port = 3000;
 
-app.use(cors());
+app.use(cors({
+   origin: 'travels-dusky.vercel.app',  // Allow only your frontend URL
+   methods: 'GET,POST',
+   credentials: true
+}));
 
 const bcrypt = require('bcrypt')
 

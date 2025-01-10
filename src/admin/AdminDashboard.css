@@ -1,0 +1,51 @@
+/* Basic layout */
+.admin-dashboard {
+    display: flex;
+    flex-direction: row;
+    transition: margin-left 0.3s;
+}
+
+/* Sidebar styles */
+.sidebar-toggle {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Content area */
+.content {
+    flex-grow: 1;
+    margin-left: 250px; /* Default sidebar width */
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+/* When the sidebar is collapsed */
+.content.collapsed {
+    margin-left: 0;
+}
+
+/* For larger screens, the sidebar remains open */
+@media screen and (max-width: 768px) {
+    .sidebar-toggle {
+        display: block;
+    }
+
+    /* Adjust the content when the sidebar is collapsed */
+    .content {
+        margin-left: 0;
+    }
+
+    .admin-dashboard {
+        flex-direction: column;
+    }
+
+    .content.expanded {
+        margin-left: 0;
+    }
+}

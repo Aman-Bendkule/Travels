@@ -1,0 +1,94 @@
+/* Default styles for sidebar */
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hide sidebar by default */
+  transition: left 0.3s ease;
+  z-index: 1000; /* Ensure sidebar stays on top */
+}
+
+.sidebar.open {
+  left: 0; /* Show sidebar when open */
+}
+
+.sidebar h2 {
+  color: white;
+  text-align: center;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.sidebar a:hover {
+  background-color: #444;
+}
+
+/* Button for toggling the sidebar on small screens */
+.sidebar-toggle {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2000; /* Ensure toggle button stays on top */
+}
+
+.hamburger {
+  width: 30px;
+  height: 4px;
+  background-color: rgb(78, 178, 35);
+  margin: 6px 0;
+  transition: 0.3s;
+}
+
+/* Transform the hamburger into an 'X' when the sidebar is open */
+.hamburger.open:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Media Query for small screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    left: -200px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+}
+
+/* Always show sidebar on larger screens */
+@media (min-width: 769px) {
+  .sidebar {
+    left: 0; /* Always show sidebar on large screens */
+  }
+
+  .sidebar-toggle {
+    display: none; /* Hide hamburger icon on large screens */
+  }
+}

@@ -1,0 +1,139 @@
+.enquire-container {
+  padding: 20px;
+  margin-left: 250px; /* Adjusting space for the sidebar on larger screens */
+  transition: margin-left 0.3s ease;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-wrapper {
+  overflow-x: auto; /* Enables horizontal scrolling on small screens */
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto; /* Allow columns to adjust automatically */
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  word-wrap: break-word; /* Prevent content overflow */
+}
+
+.responsive-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .responsive-table {
+    min-width: 100%; /* Ensures the table takes full width on small screens */
+  }
+
+  .responsive-table th,
+  .responsive-table td {
+    font-size: 14px; /* Adjust font size on small screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Adjust layout when the screen is large enough and sidebar is visible */
+  .enquire-container {
+    margin-left: 250px; /* Adjust for sidebar */
+    width: calc(100% - 250px); /* Ensures the content takes full width minus sidebar */
+  }
+
+  .table-wrapper {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* For tablets or smaller screens, reduce the margin and enable horizontal scrolling */
+  .enquire-container {
+    margin-left: 0;
+  }
+}
+
+
+/* EnquireByUser.css */
+
+/* Style for the print button */
+.print-button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* Hover effect for the print button */
+.print-button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive table */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.responsive-table th, .responsive-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.responsive-table th {
+  background-color: #f2f2f2;
+}
+
+/* Ensure the table is scrollable on small screens */
+@media (max-width: 768px) {
+  .responsive-table th, .responsive-table td {
+      font-size: 14px;
+  }
+}
+
+@media print {
+  .print-button {
+    display: none; /* Hide the print button during printing */
+  }
+  
+  .contact-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact-table-wrapper {
+    margin-top: 20px;
+  }
+
+  .contact-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .contact-table th, .contact-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .contact-table th {
+    background-color: #f2f2f2;
+  }
+}
